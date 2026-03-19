@@ -46,7 +46,13 @@ az login
 
 ## 2) Configure environment
 
-Edit [.env](.env):
+Create `.env` from the sample file (first time only):
+
+```powershell
+Copy-Item .env.sample .env
+```
+
+Then edit `.env` and set at least:
 
 - `DATAVERSE_URL=https://orgfdd465b1.crm.dynamics.com`
 - `DATAVERSE_TABLE=ConversationTranscript`
@@ -54,6 +60,8 @@ Edit [.env](.env):
 If `ConversationTranscript` is not the entity set name, the script tries to
 resolve it from metadata. If resolution fails, set `DATAVERSE_TABLE` to the
 entity set name (usually plural), for example `conversationtranscripts`.
+
+Optional values for Entra enrichment are documented in Section 5.
 
 ## 3) Run extractor
 
