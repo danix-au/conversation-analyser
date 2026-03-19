@@ -171,3 +171,38 @@ When the runner completes successfully for an extract file:
 - Processed Dataverse extract JSONL is moved to `output/archive/`
 - Temporary files in `output/_tmp/` are removed (unless `--keep-temp` is used)
 - Analytics Parquet output remains in `output/`
+
+## 7) Phase 1 web frontend (Streamlit admin dashboard)
+
+Launch the dashboard from the repository root:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+Then run:
+
+```powershell
+streamlit run app/streamlit_dashboard.py
+```
+
+If `streamlit` is not on your PATH, use:
+
+```powershell
+python -m streamlit run app/streamlit_dashboard.py
+```
+
+What it does:
+
+- Auto-discovers Parquet outputs in `output/` (single files and partitioned datasets)
+- Supports filtering by date, outcome, channel, department, and feedback reaction
+- Provides usage KPIs, outcome trends, and latency overview
+- Shows feedback volume, like/dislike split, and free-text comments
+- Includes quality diagnostics for knowledge gaps and failed queries
+- Includes a searchable session explorer for transcript-level investigation
+
+Notes:
+
+- If no data appears, run the analytics pipeline first (Section 6)
+- You can point the dashboard to a custom Parquet path/glob from the sidebar
+- Do not run `python app/streamlit_dashboard.py`; that runs Streamlit in bare mode and prints `missing ScriptRunContext` warnings
