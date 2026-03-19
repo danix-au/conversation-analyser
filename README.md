@@ -54,7 +54,7 @@ Copy-Item .env.sample .env
 
 Then edit `.env` and set at least:
 
-- `DATAVERSE_URL=https://orgfdd465b1.crm.dynamics.com`
+- `DATAVERSE_URL=https://your-org.crm.dynamics.com`
 - `DATAVERSE_TABLE=ConversationTranscript`
 
 If `ConversationTranscript` is not the entity set name, the script tries to
