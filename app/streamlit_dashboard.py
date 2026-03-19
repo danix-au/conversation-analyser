@@ -92,6 +92,21 @@ def apply_theme() -> None:
             background: var(--panel);
             border-radius: 10px;
         }
+
+        /* Keep tab labels readable even before hover */
+        button[data-baseweb='tab'] {
+            color: var(--muted) !important;
+            opacity: 1 !important;
+            font-weight: 700 !important;
+        }
+
+        button[data-baseweb='tab']:hover {
+            color: var(--ink) !important;
+        }
+
+        button[data-baseweb='tab'][aria-selected='true'] {
+            color: var(--accent-2) !important;
+        }
         </style>
         """,
         unsafe_allow_html=True,
