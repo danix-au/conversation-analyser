@@ -1,0 +1,21 @@
+# Environment and secrets
+.env
+.env.*
+!.env.sample
+
+# Local state and generated outputs
+.state/
+output/
+
+# Python virtual environments
+.venv/
+venv/
+
+# Python cache/bytecode
+__pycache__/
+*.py[cod]
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
